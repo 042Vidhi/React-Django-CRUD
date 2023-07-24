@@ -16,6 +16,7 @@ export default function AddModal() {
         try{
             await axios.post(`http://localhost:8000/api/notes/create/`,post);
         }
+        
         catch(error){
             console.error("Error Posting note:", error);
         }

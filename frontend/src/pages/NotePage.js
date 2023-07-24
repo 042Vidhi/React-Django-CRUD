@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import EditModal from '../components/EditModal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function NotePage() {
   const { id } = useParams();
@@ -14,7 +16,9 @@ export default function NotePage() {
         console.log(`http://localhost:8000/api/notes/${id}/`)
         const result = await axios.get(`http://localhost:8000/api/notes/${id}/`);
         setData(result.data);
-      } catch (error) {
+      } 
+      
+      catch (error) {
         console.error("Error fetching NotePage:", error);
       }
     };
@@ -26,14 +30,21 @@ export default function NotePage() {
     try {
       await axios.delete(`http://localhost:8000/api/notes/${id}/delete/`);
       window.location.replace('/');
+      toast.success("Note Deleted Successfully" , {
+        position: toast.POSITION.TOP_RIGHT, // Set toast position
+        autoClose: 3000, // Close the toast after 3 seconds
+        hideProgressBar: true, // Hide the progress bar
+      });
     } catch (error) {
       console.error("Error deleting note:", error);
+      toast.error("Error Deleting Note");
     }
   };
 
   return (
     <div className='flex flex-col p-4 md:px-24'>
       {showModal && <EditModal showModal={showModal} setShowModal={setShowModal} data={data} />}
+      <ToastContainer />
       <div className='flex flex-row justify-between items-center pb-3'>
         <h1 className='font-bold text-3xl'>{data.title}</h1>
         <div className='flex flex-col md:flex-row gap-2'>
