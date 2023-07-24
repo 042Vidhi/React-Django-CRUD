@@ -81,10 +81,4 @@ This repository contains a simple Notes app built with Django and React. The app
 
 Contributions to improve the app or add new features are welcome! Please fork the repository and create a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 Feel free to enhance the README with more information about the app, its architecture, and any additional setup instructions. You can also include information on how to deploy the app to production or any other relevant details.
