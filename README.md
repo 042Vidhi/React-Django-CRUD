@@ -73,8 +73,9 @@ This repository contains a simple Notes app built with Django and React. The app
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 1](screenshots/Screenshot1.png)
+![Screenshot 2](screenshots/Screenshot2.png)
+![Screenshot 3](screenshots/Screenshot3.png)
 
 ## Contributions
 
